@@ -89,7 +89,7 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
   };
 
   return (
-    <section className="embla">
+    <section className="embla w-[100vw] lg:w-[70vw]">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((index) => {
@@ -137,9 +137,9 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
                           <a href={id}>Read More</a>
                         </div>
 
-                        <div className="flex w-1/6 md:w-1/6 p-2 md:p-3 bg-[#d9d9d9] hover:bg-[#121212] text-[#121212] hover:text-[#d9d9d9] rounded-lg items-center justify-center cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105 md:hover:scale-110">
+                        <div className="flex w-1/6 md:w-1/6 p-2 md:p-4 bg-[#d9d9d9] hover:bg-[#121212] text-[#121212] hover:text-[#d9d9d9] rounded-lg items-center justify-center cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105 md:hover:scale-110">
                           <Link href={github} target="blank">
-                            <Code className="w-4 h-4" />
+                            <Code className="w-4 h-4 lg:w-6 lg:h-6" />
                           </Link>
                         </div>
                       </div>

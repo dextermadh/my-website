@@ -6,17 +6,17 @@ import project3Img1 from "../../../../public/assets/projects/project3img1.png";
 import project3Img2 from "../../../../public/assets/projects/project3img2.png";
 import project3Img3 from "../../../../public/assets/projects/project3img3.png";
 import project3Img4 from "../../../../public/assets/projects/project3img4.png";
-import '../projects/projects.css'
+import "../projects/projects.css";
 import { Github } from "lucide-react";
 import Link from "next/link";
-
-// top import section remains the same...
 
 const techList = (items: string[]) =>
   items.map((tech, index) => (
     <span
       key={index}
-      className={`border-2 border-[#3d3d3d] text-[9px] lg:text-[16px] p-2 lg:p-3 rounded-lg hover:bg-[#d9d9d9] hover:text-[#121212] lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-110 lg:hover:${index % 2 === 0 ? '-rotate-1' : 'rotate-1'}`}
+      className={`border-2 border-[#3d3d3d] text-[9px] lg:text-[16px] p-2 lg:p-3 rounded-lg hover:bg-[#d9d9d9] hover:text-[#121212] lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-110 lg:hover:${
+        index % 2 === 0 ? "-rotate-1" : "rotate-1"
+      }`}
     >
       {tech}
     </span>
@@ -68,8 +68,8 @@ function Projects() {
           <p className="font-firacode text-[#d9d9d9]">
             An interactive AI-powered chatbot designed for fashion designers to
             assist clients with inquiries related to collections, appointments,
-            and design-related topics. Built using Streamlit for the frontend
-            and FastAPI for the backend, this project offers a smooth and
+            and design-related topics. Built using Streamlit for the frontend
+            and FastAPI for the backend, this project offers a smooth and
             stylish user experience with animated responses and customizable
             classification logic.
           </p>
@@ -88,6 +88,7 @@ function Projects() {
           <Image
             src={chatImage}
             alt="chat image"
+            loading="lazy"
             className="border-2 border-[#3d3d3d] w-[80vw] rounded-xl lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-140 lg:hover:rotate-1"
           />
         </div>
@@ -116,14 +117,14 @@ function Projects() {
             techniques to maximize accuracy and efficiency:
           </p>
           {[
-            { num: "01", desc: "Regex-based Matching (Fastest)" },
+            { num: "01", desc: "Regex-based Matching (Fastest)" },
             {
               num: "02",
-              desc: "BERT-based Classification  (for moderately available data)",
+              desc: "BERT-based Classification (for moderately available data)",
             },
             {
               num: "03",
-              desc: "LLM-based Classification using DeepSeek R1 (for low-sample scenarios)",
+              desc: "LLM-based Classification using DeepSeek R1 (for low-sample scenarios)",
             },
           ].map((item) => (
             <div
@@ -135,7 +136,7 @@ function Projects() {
             </div>
           ))}
           <p className="font-firacode text-[#d9d9d9] mt-4">
-            Built using FastAPI and served with  Uvicorn, this project is
+            Built using FastAPI and served with Uvicorn, this project is
             designed for real-time log analysis and classification.
           </p>
         </div>
@@ -143,6 +144,7 @@ function Projects() {
           <Image
             src={project2Img1}
             alt="chat image"
+            loading="lazy"
             className="border-2 border-[#3d3d3d] w-[80vw] rounded-xl lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-160 lg:hover:rotate-1"
           />
         </div>
@@ -164,6 +166,7 @@ function Projects() {
         <iframe
           src="https://ashirafernando.vercel.app/"
           className="iframe rounded-xl lg:w-[1280px] h-[600px] lg:h-[650px]"
+          loading="lazy"
         />
       </div>
       <div className="lg:mr-52 lg:ml-52 mr-16 ml-16 mt-10">
@@ -203,4 +206,3 @@ function Projects() {
 }
 
 export default Projects;
-

@@ -3,9 +3,11 @@
 import { FileUser, Github, Linkedin, MoveRight } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import EmblaCarousel from "./EmblaCarousel";
-import { EmblaOptionsType } from "embla-carousel";
+import dynamic from "next/dynamic";
 import "./embla.css";
+
+// Lazy-load EmblaCarousel to reduce initial bundle size
+const EmblaCarousel = dynamic(() => import("./EmblaCarousel"), { ssr: false });
 
 const navButtons = [
   {

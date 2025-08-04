@@ -116,8 +116,8 @@ function About() {
           <Image
             src={myimage2}
             alt="me2"
-            priority
             placeholder="blur"
+            loading="lazy"
             className="rounded-xl lg:w-full lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-110 lg:hover:-rotate-3 will-change-transform"
           />
           <div className="py-50 hidden lg:flex">
@@ -125,6 +125,7 @@ function About() {
               src={librariesImg}
               alt="libraries"
               placeholder="blur"
+              loading="lazy"
               className="lg:scale-125 lg:-rotate-[14deg] will-change-transform"
             />
           </div>
