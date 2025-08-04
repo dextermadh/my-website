@@ -6,17 +6,19 @@ import project3Img1 from "../../../../public/assets/projects/project3img1.png";
 import project3Img2 from "../../../../public/assets/projects/project3img2.png";
 import project3Img3 from "../../../../public/assets/projects/project3img3.png";
 import project3Img4 from "../../../../public/assets/projects/project3img4.png";
-import '../projects/projects.css'
+import "../projects/projects.css";
 import { Github } from "lucide-react";
 import Link from "next/link";
-
-// top import section remains the same...
 
 const techList = (items: string[]) =>
   items.map((tech, index) => (
     <span
       key={index}
-      className={`border-2 border-[#3d3d3d] text-[9px] lg:text-[16px] p-2 lg:p-3 rounded-lg hover:bg-[#d9d9d9] hover:text-[#121212] lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-110 lg:hover:${index % 2 === 0 ? '-rotate-1' : 'rotate-1'}`}
+      className={`border-2 border-[#3d3d3d] text-[9px] lg:text-[16px] p-2 lg:p-3 rounded-lg 
+        hover:bg-[#d9d9d9] hover:text-[#121212] 
+        lg:transition-transform lg:duration-300 lg:ease-in-out 
+        lg:hover:scale-110 
+        ${index % 2 === 0 ? "lg:hover:-rotate-1" : "lg:hover:rotate-1"}`}
     >
       {tech}
     </span>
@@ -64,7 +66,7 @@ function Projects() {
       </div>
 
       <div className="flex flex-col lg:flex-row lg:justify-between justify-center lg:mr-52 lg:ml-52 lg:mt-10 mt-4">
-        <div className="flex lg:flex-1/2  flex-col gap-2 font-firacode mr-12 ml-12 lg:ml-12 lg:mr-16 mt-5 text-[11px] lg:text-[16px]">
+        <div className="flex lg:flex-1/2 flex-col gap-2 font-firacode mr-12 ml-12 lg:ml-12 lg:mr-16 mt-5 text-[11px] lg:text-[16px]">
           <p className="font-firacode text-[#d9d9d9]">
             An interactive AI-powered chatbot designed for fashion designers to
             assist clients with inquiries related to collections, appointments,
@@ -88,7 +90,11 @@ function Projects() {
           <Image
             src={chatImage}
             alt="chat image"
-            className="border-2 border-[#3d3d3d] w-[80vw] rounded-xl lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-140 lg:hover:rotate-1"
+            className="border-2 border-[#3d3d3d] w-[80vw] rounded-xl
+              lg:transition-transform lg:duration-300 lg:ease-in-out
+              lg:hover:scale-140 lg:hover:rotate-1"
+            priority={false} // Avoid high priority to save resources
+            loading="lazy" // Lazy load images for mobile performance
           />
         </div>
       </div>
@@ -109,8 +115,8 @@ function Projects() {
         {techList(["CSV", "MultinomialNB"])}
       </div>
 
-      <div className="flex flex-col lg:flex-row lg:justify-between justify-center lg:mr-52 lg:ml-52 lg:mt-10 mt-8">
-        <div className="lg:flex-1/2 flex flex-col gap-2  font-firacode mr-16 ml-16 lg:ml-12 lg:mr-16 mt-5 text-[11px] lg:text-[16px]">
+      <div className="flex justify-center lg:mr-52 lg:ml-52 mt-10 lg:mt-10 mt-8">
+        <div className="lg:flex-1/2 flex flex-col gap-2 font-firacode mr-16 ml-16 lg:ml-12 lg:mr-16 mt-5 text-[11px] lg:text-[16px]">
           <p className="font-firacode text-[#d9d9d9]">
             A smart log classification system that combines three different
             techniques to maximize accuracy and efficiency:
@@ -143,7 +149,10 @@ function Projects() {
           <Image
             src={project2Img1}
             alt="chat image"
-            className="border-2 border-[#3d3d3d] w-[80vw] rounded-xl lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-160 lg:hover:rotate-1"
+            className="border-2 border-[#3d3d3d] w-[80vw] rounded-xl
+              lg:transition-transform lg:duration-300 lg:ease-in-out
+              lg:hover:scale-160 lg:hover:rotate-1"
+            loading="lazy"
           />
         </div>
       </div>
@@ -164,6 +173,8 @@ function Projects() {
         <iframe
           src="https://ashirafernando.vercel.app/"
           className="iframe rounded-xl lg:w-[1280px] h-[600px] lg:h-[650px]"
+          loading="lazy"
+          title="Fashion Designer Website"
         />
       </div>
       <div className="lg:mr-52 lg:ml-52 mr-16 ml-16 mt-10">
@@ -172,6 +183,8 @@ function Projects() {
           <a
             href="https://ashirafernando.vercel.app"
             className="cursor-pointer"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             https://ashirafernando.vercel.app/
           </a>
@@ -192,7 +205,11 @@ function Projects() {
       </div>
       <div className="lg:w-[20vw] w-[40vw] mx-auto">
         <Link href="https://github.com/dextermadh" target="_blank">
-          <span className="flex justify-center text-[11px] lg:text-[18px] mt-8 border-2 border-[#3d3d3d] p-3 lg:p-6 gap-2 rounded-2xl hover:bg-[#d9d9d9] hover:text-[#121212] lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-110 lg:hover:rotate-1">
+          <span
+            className="flex justify-center text-[11px] lg:text-[18px] mt-8 border-2 border-[#3d3d3d] p-3 lg:p-6 gap-2 rounded-2xl
+              hover:bg-[#d9d9d9] hover:text-[#121212]
+              lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-110 lg:hover:rotate-1"
+          >
             <Github />
             <p>dextermadh</p>
           </span>
@@ -203,4 +220,3 @@ function Projects() {
 }
 
 export default Projects;
-

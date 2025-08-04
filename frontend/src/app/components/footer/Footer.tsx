@@ -88,7 +88,7 @@ function Footer() {
       </div>
 
       {/* Bottom copyright text pushed to bottom with mt-auto */}
-      <div className="mt-auto  text-sm mx-auto px-4 text-center w-full max-w-screen-lg">
+      <div className="mt-auto text-sm mx-auto px-4 text-center w-full max-w-screen-lg">
         <p>Created by Madhuka Abhishek</p>
         <p className="text-[#d9d9d9]">2025 © All Rights Reserved</p>
       </div>
@@ -97,4 +97,3 @@ function Footer() {
 }
 
 export default Footer;
-

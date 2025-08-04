@@ -11,7 +11,6 @@ const navLinks = [
   { href: "#contact", label: "Contacts" },
 ];
 
-
 const Navbar = () => {
   return (
     <div className="relative flex items-center px-4 py-4 lg:px-20 lg:py-8">
