@@ -42,7 +42,7 @@ const Navbar = () => {
   flex justify-center gap-6 lg:gap-10 font-opensans
   bg-[#121212] text-[#d9d9d9] text-[12px] lg:text-[15px]
   border-2 rounded-2xl px-4 py-2 w-9/12 sm:w-4/5 lg:w-2/6
-  transition-transform duration-300 ease-in-out hover:scale-105"
+  lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-105"
       >
         {navLinks.map(({ href, label }) => (
           <Link key={href} href={href}>

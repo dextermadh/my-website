@@ -27,7 +27,7 @@ const contactLinks = [
 function Footer() {
   return (
     <div
-      className="relative py-12 font-firacode flex flex-col justify-between min-h-[75vh]"
+      className="relative py-12 font-firacode flex flex-col justify-between min-h-[95vh]"
       id="contacts"
     >
       {/* Background Decorative Elements */}
@@ -58,7 +58,7 @@ function Footer() {
         <h1 className="text-[#d9d9d9]">.../Contacts</h1>
         <div className="flex flex-col lg:flex-row gap-6 mt-5">
           {contactLinks.map((link, index) => {
-            const commonClasses = `flex justify-center gap-2 border-2 p-3 lg:p-4 rounded-lg hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:${link.rotate}`;
+            const commonClasses = `flex justify-center gap-2 border-2 p-3 lg:p-4 rounded-lg hover:bg-[#d9d9d9] hover:text-[#121212] lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-110 lg:hover:${link.rotate}`;
             const isEmail = link.href.startsWith("mailto:");
             return isEmail ? (
               <a
@@ -88,7 +88,7 @@ function Footer() {
       </div>
 
       {/* Bottom copyright text pushed to bottom with mt-auto */}
-      <div className="mt-auto text-sm mx-auto px-4 text-center w-full max-w-screen-lg">
+      <div className="mt-auto  text-sm mx-auto px-4 text-center w-full max-w-screen-lg">
         <p>Created by Madhuka Abhishek</p>
         <p className="text-[#d9d9d9]">2025 © All Rights Reserved</p>
       </div>

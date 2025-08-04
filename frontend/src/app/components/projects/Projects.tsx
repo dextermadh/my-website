@@ -16,7 +16,7 @@ const techList = (items: string[]) =>
   items.map((tech, index) => (
     <span
       key={index}
-      className={`border-2 border-[#3d3d3d] text-[9px] lg:text-[16px] p-2 lg:p-3 rounded-lg hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:${index % 2 === 0 ? '-rotate-1' : 'rotate-1'}`}
+      className={`border-2 border-[#3d3d3d] text-[9px] lg:text-[16px] p-2 lg:p-3 rounded-lg hover:bg-[#d9d9d9] hover:text-[#121212] lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-110 lg:hover:${index % 2 === 0 ? '-rotate-1' : 'rotate-1'}`}
     >
       {tech}
     </span>
@@ -88,7 +88,7 @@ function Projects() {
           <Image
             src={chatImage}
             alt="chat image"
-            className="border-2 border-[#3d3d3d] w-[80vw] rounded-xl transition-transform duration-300 ease-in-out hover:scale-140 hover:rotate-1"
+            className="border-2 border-[#3d3d3d] w-[80vw] rounded-xl lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-140 lg:hover:rotate-1"
           />
         </div>
       </div>
@@ -143,7 +143,7 @@ function Projects() {
           <Image
             src={project2Img1}
             alt="chat image"
-            className="border-2 border-[#3d3d3d] w-[80vw] rounded-xl transition-transform duration-300 ease-in-out hover:scale-160 hover:rotate-1"
+            className="border-2 border-[#3d3d3d] w-[80vw] rounded-xl lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-160 lg:hover:rotate-1"
           />
         </div>
       </div>
@@ -160,16 +160,21 @@ function Projects() {
       <div className="flex justify-center gap-2 lg:gap-4 mt-4">
         {techList(["Vercel", "NextJS", "Aceternity UI"])}
       </div>
-      <div className="flex justify-center mr-52 ml-52 mt-10">
+      <div className="flex justify-center lg:mr-52 lg:ml-52 mt-10">
         <iframe
           src="https://ashirafernando.vercel.app/"
-          className="iframe rounded-xl w-[1280px] h-[600px] lg:h-[650px]"
+          className="iframe rounded-xl lg:w-[1280px] h-[600px] lg:h-[650px]"
         />
       </div>
       <div className="lg:mr-52 lg:ml-52 mr-16 ml-16 mt-10">
         <span className="font-firacode text-[11px] lg:text-[16px]">
           <b>Website Link: </b>
-          <p className="cursor-pointer">https://ashirafernando.vercel.app/</p>
+          <a
+            href="https://ashirafernando.vercel.app"
+            className="cursor-pointer"
+          >
+            https://ashirafernando.vercel.app/
+          </a>
         </span>
       </div>
 
@@ -187,7 +192,7 @@ function Projects() {
       </div>
       <div className="lg:w-[20vw] w-[40vw] mx-auto">
         <Link href="https://github.com/dextermadh" target="_blank">
-          <span className="flex justify-center text-[11px] lg:text-[18px] mt-8 border-2 border-[#3d3d3d] p-3 lg:p-6 gap-2 rounded-2xl hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-1">
+          <span className="flex justify-center text-[11px] lg:text-[18px] mt-8 border-2 border-[#3d3d3d] p-3 lg:p-6 gap-2 rounded-2xl hover:bg-[#d9d9d9] hover:text-[#121212] lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-110 lg:hover:rotate-1">
             <Github />
             <p>dextermadh</p>
           </span>

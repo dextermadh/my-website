@@ -40,7 +40,7 @@ const renderNavButton = (
   index: number
 ) => (
   <Link key={index} href={href} target={external ? "_blank" : undefined}>
-    <div className="cursor-pointer outline outline-2 outline-[#d9d9d9] w-28 h-10 md:w-32 md:h-12 flex justify-center items-center p-2 md:p-3 gap-2 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 text-sm md:text-base">
+    <div className="cursor-pointer outline outline-2 outline-[#d9d9d9] w-28 h-10 md:w-32 md:h-12 flex justify-center items-center p-2 md:p-3 gap-2 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-110 text-sm md:text-base">
       {icon}
       <span>{label}</span>
     </div>
@@ -61,7 +61,7 @@ function Hero() {
               <span className="text-center bg-[#d9d9d9] font-firacode text-[#121212] text-[14px] md:text-[28px] p-2 md:p-3 rounded-lg w-[100px] md:w-[450px] h-[35px] md:h-[70px] flex items-center justify-center">
                 About Me
               </span>
-              <MoveRight className="bg-[#d9d9d9] text-[#121212] p-2 md:p-3 rounded-lg w-[50px] md:w-[70px] h-[35px] md:h-[70px] transition-transform duration-300 ease-in-out hover:rotate-90" />
+              <MoveRight className="bg-[#d9d9d9] text-[#121212] p-2 md:p-3 rounded-lg w-[50px] md:w-[70px] h-[35px] md:h-[70px] lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:rotate-90" />
             </div>
           </Link>
           <span className="font-firacode text-[50px] md:hidden font-bold -mt-8 md:mt-0">

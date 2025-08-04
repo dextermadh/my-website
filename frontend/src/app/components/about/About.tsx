@@ -1,27 +1,27 @@
-import React from 'react';
-import svgPaths from '../imports/svg-pmhvsbynx7';
-import myimage2 from '../../../../public/assets/about_me/me2.jpg';
-import librariesImg from '../../../../public/assets/about_me/frameworks1.png';
-import Image from 'next/image';
+import React from "react";
+import svgPaths from "../imports/svg-pmhvsbynx7";
+import myimage2 from "../../../../public/assets/about_me/me2.jpg";
+import librariesImg from "../../../../public/assets/about_me/frameworks1.png";
+import Image from "next/image";
 
 const skills = [
   {
-    title: 'Area of Expertise',
+    title: "Area of Expertise",
     content:
-      'Machine Learning, NLP, Computer Vision, Data Science, LLMs, Frontend/Backend Development, Git',
+      "Machine Learning, NLP, Computer Vision, Data Science, LLMs, Frontend/Backend Development, Git",
   },
   {
-    title: 'Programming Languages',
-    content: 'Python, SQL, Java',
+    title: "Programming Languages",
+    content: "Python, SQL, Java",
   },
   {
-    title: 'Python Libraries',
+    title: "Python Libraries",
     content:
-      'Numpy, Pandas, Scikit-Learn, PyTorch, Tensorflow, Jupyter, FastAPI, Seaborn, Matplotlib, spaCy, OpenCV, Huggingface, Langchain, Groq, Streamlit',
+      "Numpy, Pandas, Scikit-Learn, PyTorch, Tensorflow, Jupyter, FastAPI, Seaborn, Matplotlib, spaCy, OpenCV, Huggingface, Langchain, Groq, Streamlit",
   },
   {
-    title: 'Other',
-    content: 'NextJs, Typescript, Tailwind, Mongodb, Chromadb, GCP, Figma',
+    title: "Other",
+    content: "NextJs, Typescript, Tailwind, Mongodb, Chromadb, GCP, Figma",
   },
 ];
 
@@ -50,7 +50,7 @@ const renderSkillCard = (
 ) => (
   <div
     key={i}
-    className="flex flex-col bg-[#d9d9d9] p-4 lg:p-6 w-66 lg:w-96 rounded-2xl font-firacode gap-2 transition-transform duration-300 ease-in-out hover:scale-110 mx-auto"
+    className="flex flex-col bg-[#d9d9d9] p-4 lg:p-6 w-66 lg:w-96 rounded-2xl font-firacode gap-2 lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-110 will-change-transform mx-auto"
   >
     <h1 className="text-black font-bold text-[12px] lg:text-[16px]">
       {skill.title}
@@ -72,9 +72,9 @@ type Education = {
 const renderEducationCard = (edu: Education, i: number) => (
   <div
     key={i}
-    className={`flex justify-center transition-transform duration-300 ease-in-out hover:scale-110 ${
-      i % 2 === 0 ? "hover:rotate-1" : "hover:-rotate-1"
-    } mx-auto`}
+    className={`flex justify-center lg:transition-transform lg:duration-300 lg:ease-in-out ${
+      i % 2 === 0 ? "lg:hover:rotate-1" : "lg:hover:-rotate-1"
+    } lg:hover:scale-110 will-change-transform mx-auto`}
   >
     <div
       className={`flex flex-col lg:flex-row font-firacode gap-2 lg:gap-0 justify-evenly ${edu.style} rounded-xl lg:h-32 p-6 mt-5 w-[68vw]`}
@@ -94,7 +94,7 @@ const renderEducationCard = (edu: Education, i: number) => (
 
 function About() {
   return (
-    <div className="relative py-12 " id="about">
+    <div className="relative py-12" id="about">
       {/* Decorative SVG */}
       <div className="absolute top-36 -left-[8vw] opacity-50 -rotate-10 -z-100">
         <svg className="w-[80vw]" viewBox="0 0 550 513" fill="none">
@@ -116,20 +116,23 @@ function About() {
           <Image
             src={myimage2}
             alt="me2"
-            className="rounded-xl  lg:w-full transition-transform duration-300 ease-in-out hover:scale-110 hover:-rotate-3"
+            priority
+            placeholder="blur"
+            className="rounded-xl lg:w-full lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-110 lg:hover:-rotate-3 will-change-transform"
           />
           <div className="py-50 hidden lg:flex">
             <Image
               src={librariesImg}
               alt="libraries"
-              className="scale-130 scale-z-100 -rotate-[14deg]"
+              placeholder="blur"
+              className="lg:scale-125 lg:-rotate-[14deg] will-change-transform"
             />
           </div>
         </div>
 
         {/* Right Section */}
         <div className="flex-2">
-          <p className="text-[10px] lg:text-lg ml-16 lg:ml-0 mr-16 mt-5  lg:mr-60 font-firacode text-[#FFFF]">
+          <p className="text-[10px] lg:text-lg ml-16 lg:ml-0 mr-16 mt-5 lg:mr-60 font-firacode text-[#FFFF]">
             Hello! I’m Madhuka Abhishek, a curious and detail-oriented NLP and
             AI enthusiast currently pursuing a degree in Software Engineering. I
             have hands-on experience in text classification and model
@@ -149,7 +152,7 @@ function About() {
 
       {/* Education Section */}
       <div>
-        <h1 className="flex justify-end font-firacode  lg:text-[40px] font-bold mr-20 mt-0 lg:mr-61 lg:-mt-20  ">
+        <h1 className="flex justify-end font-firacode lg:text-[40px] font-bold mr-20 mt-0 lg:mr-61 lg:-mt-20">
           Education
         </h1>
         <div className="flex flex-col gap-2">
