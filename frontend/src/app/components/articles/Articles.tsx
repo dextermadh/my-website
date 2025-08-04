@@ -1,27 +1,25 @@
 import React from 'react'
 import '../articles/articles.css'
+import { WavyBackground } from '@/components/ui/wavy-background';
 
 function Articles() {
   return (
-    <div>
-      <div className="flex items-center justify-center min-h-[50vh] bg-gray-100">
-        <div className="text-center">
-          <h2 className="text-4xl font-semibold text-gray-800 animate-fade-in uppercase tracking-wide">
-            Articles
-          </h2>
-          <div className="mt-6 relative overflow-hidden">
-            <span
-              className="text-lg text-gray-600 animate-typewriter whitespace-nowrap inline-block"
-              style={{ animationDelay: "1.5s", animationFillMode: "forwards" }}
-            >
-              Coming Soon - Stay Updated
-            </span>
-            <span className="absolute right-0 top-0 text-lg text-gray-600 animate-blink">
-              |
-            </span>
-          </div>
-        </div>
-      </div>
+    <div id='articles'>
+      <hr className="mt-20" />
+      <h1 className="font-firacode flex justify-end lg:mr-61 mr-16 mt-12 text-[20px] lg:text-[40px] font-bold">
+        Articles
+      </h1>
+      <WavyBackground
+        className="max-w-4xl mx-auto pb-40 font-firacode"
+        backgroundFill="#121212"
+      >
+        <p className="text-2xl lg:text-7xl text-white font-bold inter-var text-center">
+          Coming Soon...
+        </p>
+        <p className="text-base lg:text-lg mt-4 text-white font-normal inter-var text-center">
+          stay tuned to read my articles
+        </p>
+      </WavyBackground>
     </div>
   );
 }

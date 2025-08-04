@@ -1,36 +1,78 @@
-'use client'
-import { Card, CardContent } from '@/components/ui/card';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import Autoplay from 'embla-carousel-autoplay';
-import { FileUser, Github, Linkedin, MoveRight } from 'lucide-react';
-import Link from 'next/link';
-import React from 'react'
+"use client";
+
+import { FileUser, Github, Linkedin, MoveRight } from "lucide-react";
+import Link from "next/link";
+import React from "react";
 import EmblaCarousel from "./EmblaCarousel";
 import { EmblaOptionsType } from "embla-carousel";
 import "./embla.css";
 
+const navButtons = [
+  {
+    label: "Github",
+    icon: <Github />,
+    href: "https://github.com/dextermadh",
+    external: true,
+  },
+  {
+    label: "Resume",
+    icon: <FileUser />,
+    href: "#resume",
+    external: false,
+  },
+  {
+    label: "Linkedin",
+    icon: <Linkedin />,
+    href: "https://www.linkedin.com/in/madhuka-abhishek-wijesundara/",
+    external: true,
+  },
+];
+
+type NavButtonProps = {
+  label: string;
+  icon: React.ReactNode;
+  href: string;
+  external: boolean;
+};
+
+const renderNavButton = (
+  { label, icon, href, external }: NavButtonProps,
+  index: number
+) => (
+  <Link key={index} href={href} target={external ? "_blank" : undefined}>
+    <div className="cursor-pointer outline outline-2 outline-[#d9d9d9] w-28 h-10 md:w-32 md:h-12 flex justify-center items-center p-2 md:p-3 gap-2 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 text-sm md:text-base">
+      {icon}
+      <span>{label}</span>
+    </div>
+  </Link>
+);
 
 function Hero() {
-const OPTIONS: EmblaOptionsType = { loop: true };
-const SLIDE_COUNT = 5;
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
   return (
     <div>
-      <div className="py-26">
-        <div className="flex justify-center gap-20">
-          <span className="font-firacode text-[120px] font-bold">AI / ML</span>
+      {/* Heading Section */}
+      <div className="py-26 md:py-26">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-20 ">
+          <span className="font-firacode text-[50px] md:text-[120px] font-bold">
+            AI / ML
+          </span>
           <Link href="#about">
-            <div className="flex gap-5 py-20 cursor-pointer">
-              <span className="text-center bg-[#d9d9d9] font-firacode text-[#121212] text-[28px] p-3 rounded-lg w-[450px] h-[70px]">
+            <div className="flex gap-3 md:gap-5 py-10 md:py-20 cursor-pointer items-center -mt-8 md:mt-0">
+              <span className="text-center bg-[#d9d9d9] font-firacode text-[#121212] text-[14px] md:text-[28px] p-2 md:p-3 rounded-lg w-[100px] md:w-[450px] h-[35px] md:h-[70px] flex items-center justify-center">
                 About Me
               </span>
-              <MoveRight className="bg-[#d9d9d9] text-[#121212] p-3 rounded-lg w-[70px] h-[70px] transition-transform duration-300 ease-in-out hover:rotate-90" />
+              <MoveRight className="bg-[#d9d9d9] text-[#121212] p-2 md:p-3 rounded-lg w-[50px] md:w-[70px] h-[35px] md:h-[70px] transition-transform duration-300 ease-in-out hover:rotate-90" />
             </div>
           </Link>
+          <span className="font-firacode text-[50px] md:hidden font-bold -mt-8 md:mt-0">
+            Engineer
+          </span>
         </div>
-        <div className="flex justify-center gap-20">
-          <div className="ml-20 -mt-10">
-            <span className="text-[#d9d9d9] font-firacode text-[20px] text-wrap whitespace-pre-wrap ">
+
+        {/* Subtext Section */}
+        <div className="flex flex-col md:flex-row justify-center items-center md:gap-20 gap-6 mt-6 md:mt-0">
+          <div className="ml-4 md:ml-20 -mt-2 md:-mt-10 text-center md:text-left">
+            <span className="text-[#d9d9d9] font-firacode text-[12px] md:text-[20px] whitespace-pre-wrap">
               Software Engineering Undergraduate
               <br />
               passionate about working on
@@ -38,44 +80,28 @@ const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
               real-world projects.
             </span>
           </div>
-          <div className="-mt-16 ">
-            <span className="font-firacode text-[120px] font-bold">
+          <div className="-mt-6 md:-mt-16">
+            <span className="font-firacode text-[60px] lg:text-[120px] font-bold hidden md:flex">
               Engineer
             </span>
           </div>
         </div>
       </div>
-      <div className="flex justify-center gap-7 font-firacode -mt-16">
-        <Link href="https://github.com/dextermadh" target="blank">
-          <div className="cursor-pointer outline-2 outline-[#d9d9d9] w-32 h-12 flex justify-center p-3 gap-2 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110">
-            <Github />
-            <span>Github</span>
-          </div>
-        </Link>
-        <Link href="#resume">
-          <div className="cursor-pointer outline-2 outline-[#d9d9d9] w-32 h-12 flex justify-center p-3 gap-2 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110">
-            <FileUser />
-            <span>Resume</span>
-          </div>
-        </Link>
-        <Link
-          href="https://www.linkedin.com/in/madhuka-abhishek-wijesundara/"
-          target="blank"
-        >
-          <div className="cursor-pointer outline-2 outline-[#d9d9d9] w-32 h-12 flex justify-center p-3 gap-2 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110">
-            <Linkedin />
-            <span>Linkedin</span>
-          </div>
-        </Link>
+
+      {/* Navigation Buttons */}
+      <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-7 font-firacode -mt-16 md:-mt-16">
+        {navButtons.map(renderNavButton)}
       </div>
-      <div className="flex flex-col items-center mt-10 gap-8">
-        <span className="font-firacode text-[#d9d9d9]">
+
+      {/* Carousel */}
+      <div className="flex flex-col items-center mt-10 gap-4 md:gap-8">
+        <span className="font-firacode text-[#d9d9d9] text-[12px] md:text-base">
           .../Featured Projects
         </span>
-        <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+        <EmblaCarousel slides={[0, 1, 2, 3]} options={{ loop: true }} />
       </div>
     </div>
   );
 }
 
-export default Hero
+export default Hero;

@@ -10,49 +10,61 @@ import '../projects/projects.css'
 import { Github } from "lucide-react";
 import Link from "next/link";
 
+// top import section remains the same...
+
+const techList = (items: string[]) =>
+  items.map((tech, index) => (
+    <span
+      key={index}
+      className={`border-2 border-[#3d3d3d] text-[9px] lg:text-[16px] p-2 lg:p-3 rounded-lg hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:${index % 2 === 0 ? '-rotate-1' : 'rotate-1'}`}
+    >
+      {tech}
+    </span>
+  ));
+
+const ProjectSection = ({
+  id,
+  number,
+  title,
+}: {
+  id: string;
+  number: string;
+  title: string;
+}) => (
+  <div
+    className="flex justify-center font-firacode mt-16 mb-5 gap-4 items-center"
+    id={id}
+  >
+    <h1 className="font-bold bg-[#fff] p-3 text-[14px] lg:text-lg text-[#121212]">
+      {number}
+    </h1>
+    <h1 className="font-bold text-[14px] lg:text-lg">{title}</h1>
+  </div>
+);
+
 function Projects() {
   return (
     <div className="flex-col" id="projects">
       <div className="flex justify-center">
         <h1 className="font-firacode text-[#d9d9d9]">.../Projects</h1>
       </div>
-      <div className="flex justify-center font-firacode mt-8 gap-4 items-center">
-        <h1 className="font-bold bg-[#fff] p-3 text-[#121212]">01</h1>
-        <h1 className="font-bold">Fashion Designer Chatbot</h1>
+
+      {/* Project 1 */}
+      <ProjectSection
+        id="project1"
+        number="01"
+        title="Fashion Designer Chatbot"
+      />
+
+      <div className="flex justify-center gap-2 lg:gap-4 mt-8">
+        {techList(["Python", "Scikit-Learn", "Pandas", "Numpy", "Groq"])}
       </div>
-      <div className="flex justify-center gap-4 mt-8">
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:-rotate-1">
-          Python
-        </span>
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-1">
-          Scikit-Learn
-        </span>
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:-rotate-1">
-          Pandas
-        </span>
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-1">
-          Numpy
-        </span>
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:-rotate-1">
-          Groq
-        </span>
+      <div className="flex justify-center gap-2 lg:gap-4 mt-4">
+        {techList(["Transformers", "Streamlit", "LinearSVC", "JSON"])}
       </div>
-      <div className="flex justify-center gap-4 mt-4">
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:-rotate-1">
-          Transformers
-        </span>
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-1">
-          Streamlit
-        </span>
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:-rotate-1">
-          LinearSVC
-        </span>
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-1">
-          JSON
-        </span>
-      </div>
-      <div className="flex justify-between mr-52 ml-52 mt-10 ">
-        <div className="flex-1/2 flex flex-col gap-2 font-firacode mr-16 mt-5">
+
+      <div className="flex flex-col lg:flex-row lg:justify-between justify-center lg:mr-52 lg:ml-52 lg:mt-10 mt-4">
+        <div className="flex lg:flex-1/2  flex-col gap-2 font-firacode mr-12 ml-12 lg:ml-12 lg:mr-16 mt-5 text-[11px] lg:text-[16px]">
           <p className="font-firacode text-[#d9d9d9]">
             An interactive AI-powered chatbot designed for fashion designers to
             assist clients with inquiries related to collections, appointments,
@@ -62,17 +74,17 @@ function Projects() {
             classification logic.
           </p>
           <h1 className="font-bold font-firacode">Features</h1>
-          <p className="text-[#d9d9d9]">
-            🎨 Elegant and intuitive chat UI with custom avatars and icons
-          </p>
-          <p className="text-[#d9d9d9]">
-            ⚡ FastAPI-powered backend for classification and logic processing
-          </p>
-          <p className="text-[#d9d9d9]">
-            🧠 Hybrid intent classification using LinearSVC() and Deepseek R1
-          </p>
+          {[
+            "🎨 Elegant and intuitive chat UI with custom avatars and icons",
+            "⚡ FastAPI-powered backend for classification and logic processing",
+            "🧠 Hybrid intent classification using LinearSVC() and Deepseek R1",
+          ].map((feature, idx) => (
+            <p key={idx} className="text-[#d9d9d9]">
+              {feature}
+            </p>
+          ))}
         </div>
-        <div className="flex-1/2">
+        <div className="lg:flex-1/2 flex justify-center mt-5 lg:mt-0">
           <Image
             src={chatImage}
             alt="chat image"
@@ -80,78 +92,54 @@ function Projects() {
           />
         </div>
       </div>
-      {/* Project 2 */}
-      <div className="flex justify-center font-firacode mt-20 gap-4 items-center">
-        <h1 className="font-bold bg-[#fff] p-3 text-[#121212]">02</h1>
-        <h1 className="font-bold">Log Classification System</h1>
-      </div>
-      <div className="flex justify-center gap-4 mt-8">
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:-rotate-1">
-          Python
-        </span>
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-1">
-          Scikit-Learn
-        </span>
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:-rotate-1">
-          Pandas
-        </span>
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-1">
-          Numpy
-        </span>
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:-rotate-1">
-          Groq
-        </span>
-      </div>
-      <div className="flex justify-center gap-4 mt-4">
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:-rotate-1">
-          BERT
-        </span>
 
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-1">
-          Transformers
-        </span>
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:-rotate-1">
-          Uvicorn
-        </span>
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-1">
-          Regex
-        </span>
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:-rotate-1">
-          CSV
-        </span>
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-1">
-          MultinomialNB
-        </span>
+      {/* Project 2 */}
+      <ProjectSection
+        id="project2"
+        number="02"
+        title="Log Classification System"
+      />
+      <div className="flex justify-center gap-2 lg:gap-4 mt-8">
+        {techList(["Python", "Scikit-Learn", "Pandas", "Numpy", "Groq"])}
       </div>
-      <div className="flex justify-between mr-52 ml-52 mt-10 ">
-        <div className="flex-1/2 flex flex-col gap-2 font-firacode mr-16">
+      <div className="flex justify-center gap-2 lg:gap-4 mt-4">
+        {techList(["BERT", "Transformers", "Uvicorn", "Regex"])}
+      </div>
+      <div className="flex justify-center gap-2 lg:gap-4 mt-4">
+        {techList(["CSV", "MultinomialNB"])}
+      </div>
+
+      <div className="flex flex-col lg:flex-row lg:justify-between justify-center lg:mr-52 lg:ml-52 lg:mt-10 mt-8">
+        <div className="lg:flex-1/2 flex flex-col gap-2  font-firacode mr-16 ml-16 lg:ml-12 lg:mr-16 mt-5 text-[11px] lg:text-[16px]">
           <p className="font-firacode text-[#d9d9d9]">
             A smart log classification system that combines three different
             techniques to maximize accuracy and efficiency:
           </p>
-          <div className="flex  font-firacode mt-4 gap-4 items-center">
-            <h1 className="bg-white p-3 text-[#121212]">01</h1>
-            <h1>Regex-based Matching (Fastest)</h1>
-          </div>
-          <div className="flex font-firacode mt-4 gap-4 items-center">
-            <h1 className=" bg-white p-3 text-[#121212]">02</h1>
-            <h1 className="">
-              BERT-based Classification  (for moderately available data)
-            </h1>
-          </div>
-          <div className="flex font-firacode mt-4 gap-4 items-center">
-            <h1 className=" bg-white p-3 text-[#121212]">03</h1>
-            <h1 className="">
-              LLM-based Classification using DeepSeek R1 (for low-sample
-              scenarios)
-            </h1>
-          </div>
+          {[
+            { num: "01", desc: "Regex-based Matching (Fastest)" },
+            {
+              num: "02",
+              desc: "BERT-based Classification  (for moderately available data)",
+            },
+            {
+              num: "03",
+              desc: "LLM-based Classification using DeepSeek R1 (for low-sample scenarios)",
+            },
+          ].map((item) => (
+            <div
+              key={item.num}
+              className="flex font-firacode mt-4 gap-4 items-center"
+            >
+              <h1 className="bg-white p-3 text-[#121212]">{item.num}</h1>
+              <h1>{item.desc}</h1>
+            </div>
+          ))}
           <p className="font-firacode text-[#d9d9d9] mt-4">
             Built using FastAPI and served with  Uvicorn, this project is
             designed for real-time log analysis and classification.
           </p>
         </div>
-        <div className="flex-1/2">
+        <div className="lg:flex-1/2 flex justify-center mt-5 lg:mt-0">
           <Image
             src={project2Img1}
             alt="chat image"
@@ -159,90 +147,48 @@ function Projects() {
           />
         </div>
       </div>
-      {/* Project 3 */}
-      <div className="flex justify-center font-firacode mt-20 gap-4 items-center">
-        <h1 className="font-bold bg-[#fff] p-3 text-[#121212]">03</h1>
-        <h1 className="font-bold">Fashion Designer Website</h1>
-      </div>
-      <div className="flex justify-center gap-4 mt-8">
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:-rotate-1">
-          Typescript
-        </span>
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-1">
-          React
-        </span>
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:-rotate-1">
-          Tailwind
-        </span>
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-1">
-          Framer
-        </span>
-      </div>
-      <div className="flex justify-center gap-4 mt-4">
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:-rotate-1">
-          Vercel
-        </span>
 
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-1">
-          NextJS
-        </span>
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:-rotate-1">
-          Aceternity UI
-        </span>
+      {/* Project 3 */}
+      <ProjectSection
+        id="project3"
+        number="03"
+        title="Fashion Designer Website"
+      />
+      <div className="flex justify-center gap-2 lg:gap-4 mt-8">
+        {techList(["Typescript", "React", "Tailwind", "Framer"])}
+      </div>
+      <div className="flex justify-center gap-2 lg:gap-4 mt-4">
+        {techList(["Vercel", "NextJS", "Aceternity UI"])}
       </div>
       <div className="flex justify-center mr-52 ml-52 mt-10">
-        {/* <div>
-          <Image src={project3Img1} alt="project3img1" />
-          <Image src={project3Img2} alt="project3img2" />
-        </div> */}
         <iframe
           src="https://ashirafernando.vercel.app/"
-          width="1280"
-          height="650"
-          className="iframe rounded-xl"
+          className="iframe rounded-xl w-[1280px] h-[600px] lg:h-[650px]"
         />
       </div>
-      <div className="mr-52 ml-52 mt-10">
-        <span className="font-firacode ">
+      <div className="lg:mr-52 lg:ml-52 mr-16 ml-16 mt-10">
+        <span className="font-firacode text-[11px] lg:text-[16px]">
           <b>Website Link: </b>
           <p className="cursor-pointer">https://ashirafernando.vercel.app/</p>
         </span>
       </div>
-      {/* Project 4 */}
-      <div className="flex justify-center font-firacode mt-20 gap-4 items-center">
-        <h1 className="font-bold bg-[#fff] p-3 text-[#121212]">04</h1>
-        <h1 className="font-bold">Other Projects (Visit my Github)</h1>
-      </div>
-      <div className="flex justify-center gap-4 mt-8">
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:-rotate-1">
-          CNNs
-        </span>
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-1">
-          ANNs
-        </span>
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:-rotate-1">
-          Tensorflow
-        </span>
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-1">
-          Pytorch
-        </span>
-      </div>
-      <div className="flex justify-center gap-4 mt-4">
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:-rotate-1">
-          Docker
-        </span>
 
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-1">
-          GCP
-        </span>
-        <span className="border-2 border-[#3d3d3d] p-3 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:-rotate-1">
-          OpenCV
-        </span>
+      {/* Project 4 */}
+      <ProjectSection
+        id="project4"
+        number="04"
+        title="Other Projects (Visit my Github)"
+      />
+      <div className="flex justify-center gap-2 lg:gap-4 mt-8">
+        {techList(["CNNs", "ANNs", "Tensorflow", "Pytorch"])}
       </div>
-      <div className="w-[20vw] mx-auto">
-        <Link href="https://github.com/dextermadh" target="_blank" className="">
-          <span className="flex justify-center mt-8 border-2 border-[#3d3d3d] p-6 gap-2 rounded-2xl hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-1">
-            <Github className="" />
+      <div className="flex justify-center gap-2 lg:gap-4 mt-4">
+        {techList(["Docker", "GCP", "OpenCV"])}
+      </div>
+      <div className="lg:w-[20vw] w-[40vw] mx-auto">
+        <Link href="https://github.com/dextermadh" target="_blank">
+          <span className="flex justify-center text-[11px] lg:text-[18px] mt-8 border-2 border-[#3d3d3d] p-3 lg:p-6 gap-2 rounded-2xl hover:bg-[#d9d9d9] hover:text-[#121212] transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-1">
+            <Github />
             <p>dextermadh</p>
           </span>
         </Link>
@@ -252,3 +198,4 @@ function Projects() {
 }
 
 export default Projects;
+

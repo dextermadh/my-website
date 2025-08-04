@@ -18,6 +18,7 @@ module.exports = {
           to: { width: "100%" },
         },
       },
+      scrollBehavior: ["smooth"],
     },
   },
   plugins: [],

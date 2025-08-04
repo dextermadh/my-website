@@ -152,3 +152,7 @@ iframe {
 iframe::-webkit-scrollbar {
     display: none;             /* For Chrome, Safari, and newer Edge */
 }
+
+html {
+  @apply scroll-smooth;
+}
