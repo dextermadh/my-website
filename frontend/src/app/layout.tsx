@@ -1,6 +1,21 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Fira_Code, Open_Sans } from "next/font/google";
+
+export const firaCode = Fira_Code({
+  subsets: ["latin"],
+  weight: ["400", "700"], // only the ones you actually use
+  display: "swap",
+  variable: "--font-firacode",
+});
+
+export const openSans = Open_Sans({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+  variable: "--font-opensans",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

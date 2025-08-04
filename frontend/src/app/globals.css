@@ -156,3 +156,8 @@ iframe::-webkit-scrollbar {
 html {
   @apply scroll-smooth;
 }
+
+.font-firacode {
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+}

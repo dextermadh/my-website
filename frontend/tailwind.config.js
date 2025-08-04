@@ -6,8 +6,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        "fira-code": ["Fira Code", "monospace"],
-        "open-sans": ["Open Sans", "sans-serif"],
+        "firacode": ["var(--font-fira-code)", "monospace"],
+        "opensans": ["var(--font-open-sans)", "sans-serif"],
       },
       animation: {
         typewriter: "typewriter 3s steps(60, end) infinite",
