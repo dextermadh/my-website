@@ -154,7 +154,7 @@ iframe::-webkit-scrollbar {
 }
 
 html {
-  /* @apply scroll-smooth; */
+  @apply scroll-smooth;
 }
 
 .font-firacode {
