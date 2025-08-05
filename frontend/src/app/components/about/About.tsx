@@ -50,7 +50,7 @@ const renderSkillCard = (
 ) => (
   <div
     key={i}
-    className="flex flex-col bg-[#d9d9d9] p-4 lg:p-6 w-66 lg:w-96 rounded-2xl font-firacode gap-2 lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-110 will-change-transform mx-auto"
+    className="flex flex-col bg-[#d9d9d9] p-4 lg:p-6 w-66 lg:w-96 rounded-2xl  gap-2 lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-110 will-change-transform mx-auto"
   >
     <h1 className="text-black font-bold text-[12px] lg:text-[16px]">
       {skill.title}
@@ -77,7 +77,7 @@ const renderEducationCard = (edu: Education, i: number) => (
     } lg:hover:scale-110 will-change-transform mx-auto`}
   >
     <div
-      className={`flex flex-col lg:flex-row font-firacode gap-2 lg:gap-0 justify-evenly ${edu.style} rounded-xl lg:h-32 p-6 mt-5 w-[68vw]`}
+      className={`flex flex-col lg:flex-row  gap-2 lg:gap-0 justify-evenly ${edu.style} rounded-xl lg:h-32 p-6 mt-5 w-[68vw]`}
     >
       <div className="flex flex-col gap-1">
         <h1 className="font-bold text-[14px] lg:text-[16px]">{edu.title}</h1>
@@ -105,7 +105,7 @@ function About() {
       <hr className="bg-[#d9d9d9] opacity-75" />
 
       {/* Header */}
-      <h1 className="font-firacode px-15 lg:px-40 text-[#d9d9d9] text-[10px] lg:text-[14px] mt-5">
+      <h1 className=" px-15 lg:px-40 text-[#d9d9d9] text-[10px] lg:text-[14px] mt-5">
         .../About Me
       </h1>
 
@@ -133,7 +133,7 @@ function About() {
 
         {/* Right Section */}
         <div className="flex-2">
-          <p className="text-[10px] lg:text-lg ml-16 lg:ml-0 mr-16 mt-5 lg:mr-60 font-firacode text-[#FFFF]">
+          <p className="text-[10px] lg:text-lg ml-16 lg:ml-0 mr-16 mt-5 lg:mr-60  text-[#FFFF]">
             Hello! I’m Madhuka Abhishek, a curious and detail-oriented NLP and
             AI enthusiast currently pursuing a degree in Software Engineering. I
             have hands-on experience in text classification and model
@@ -142,7 +142,7 @@ function About() {
             applications using Transformers and open-source tools.
           </p>
 
-          <h1 className="font-firacode text-[#d9d9d9] py-8 -ml-6 lg:-ml-20 px-20 -mt-2 lg:mt-0 text-[10px] lg:text-[14px]">
+          <h1 className=" text-[#d9d9d9] py-8 -ml-6 lg:-ml-20 px-20 -mt-2 lg:mt-0 text-[10px] lg:text-[14px]">
             .../Technical Skills
           </h1>
           <div className="grid place-items-center gap-6 lg:mr-70 mx-auto">
@@ -153,7 +153,7 @@ function About() {
 
       {/* Education Section */}
       <div>
-        <h1 className="flex justify-end font-firacode lg:text-[40px] font-bold mr-20 mt-0 lg:mr-61 lg:-mt-20">
+        <h1 className="flex justify-end  lg:text-[40px] font-bold mr-20 mt-0 lg:mr-61 lg:-mt-20">
           Education
         </h1>
         <div className="flex flex-col gap-2">

@@ -32,7 +32,7 @@ const ProjectSection = ({
   title: string;
 }) => (
   <div
-    className="flex justify-center font-firacode mt-16 mb-5 gap-4 items-center"
+    className="flex justify-center  mt-16 mb-5 gap-4 items-center"
     id={id}
   >
     <h1 className="font-bold bg-[#fff] p-3 text-[14px] lg:text-lg text-[#121212]">
@@ -46,7 +46,7 @@ function Projects() {
   return (
     <div className="flex-col" id="projects">
       <div className="flex justify-center">
-        <h1 className="font-firacode text-[#d9d9d9]">.../Projects</h1>
+        <h1 className=" text-[#d9d9d9]">.../Projects</h1>
       </div>
 
       {/* Project 1 */}
@@ -64,8 +64,8 @@ function Projects() {
       </div>
 
       <div className="flex flex-col lg:flex-row lg:justify-between justify-center lg:mr-52 lg:ml-52 lg:mt-10 mt-4">
-        <div className="flex lg:flex-1/2  flex-col gap-2 font-firacode mr-12 ml-12 lg:ml-12 lg:mr-16 mt-5 text-[11px] lg:text-[16px]">
-          <p className="font-firacode text-[#d9d9d9]">
+        <div className="flex lg:flex-1/2  flex-col gap-2  mr-12 ml-12 lg:ml-12 lg:mr-16 mt-5 text-[11px] lg:text-[16px]">
+          <p className=" text-[#d9d9d9]">
             An interactive AI-powered chatbot designed for fashion designers to
             assist clients with inquiries related to collections, appointments,
             and design-related topics. Built using Streamlit for the frontend
@@ -73,7 +73,7 @@ function Projects() {
             stylish user experience with animated responses and customizable
             classification logic.
           </p>
-          <h1 className="font-bold font-firacode">Features</h1>
+          <h1 className="font-bold ">Features</h1>
           {[
             "🎨 Elegant and intuitive chat UI with custom avatars and icons",
             "⚡ FastAPI-powered backend for classification and logic processing",
@@ -111,8 +111,8 @@ function Projects() {
       </div>
 
       <div className="flex flex-col lg:flex-row lg:justify-between justify-center lg:mr-52 lg:ml-52 lg:mt-10 mt-8">
-        <div className="lg:flex-1/2 flex flex-col gap-2  font-firacode mr-16 ml-16 lg:ml-12 lg:mr-16 mt-5 text-[11px] lg:text-[16px]">
-          <p className="font-firacode text-[#d9d9d9]">
+        <div className="lg:flex-1/2 flex flex-col gap-2   mr-16 ml-16 lg:ml-12 lg:mr-16 mt-5 text-[11px] lg:text-[16px]">
+          <p className=" text-[#d9d9d9]">
             A smart log classification system that combines three different
             techniques to maximize accuracy and efficiency:
           </p>
@@ -129,13 +129,13 @@ function Projects() {
           ].map((item) => (
             <div
               key={item.num}
-              className="flex font-firacode mt-4 gap-4 items-center"
+              className="flex  mt-4 gap-4 items-center"
             >
               <h1 className="bg-white p-3 text-[#121212]">{item.num}</h1>
               <h1>{item.desc}</h1>
             </div>
           ))}
-          <p className="font-firacode text-[#d9d9d9] mt-4">
+          <p className=" text-[#d9d9d9] mt-4">
             Built using FastAPI and served with Uvicorn, this project is
             designed for real-time log analysis and classification.
           </p>
@@ -170,7 +170,7 @@ function Projects() {
         />
       </div>
       <div className="lg:mr-52 lg:ml-52 mr-16 ml-16 mt-10">
-        <span className="font-firacode text-[11px] lg:text-[16px]">
+        <span className=" text-[11px] lg:text-[16px]">
           <b>Website Link: </b>
           <a
             href="https://ashirafernando.vercel.app"

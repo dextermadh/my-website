@@ -116,7 +116,7 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
                         index === selectedIndex ? "bg-[#3d3d3d21]" : ""
                       }`}
                     >
-                      <div className="flex md:flex-row font-firacode gap-2 items-center md:justify-center ml-6 md:ml-0 mt-2 md:mt-10">
+                      <div className="flex md:flex-row  gap-2 items-center md:justify-center ml-6 md:ml-0 mt-2 md:mt-10">
                         <span className="text-[12px] md:text-2xl text-black font-bold p-2 md:p-3 bg-white">
                           0{index + 1}
                         </span>
@@ -125,11 +125,11 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
                         </span>
                       </div>
 
-                      <p className="mx-4 md:ml-26 mr-2 text-left md:mr-5 mt-0 md:mt-2 text-[#121212e5] p-2 md:p-3 text-[8px] md:text-[16px] font-firacode md:text-left">
+                      <p className="mx-4 md:ml-26 mr-2 text-left md:mr-5 mt-0 md:mt-2 text-[#121212e5] p-2 md:p-3 text-[8px] md:text-[16px]  md:text-left">
                         {description}
                       </p>
 
-                      <div className="flex md:flex-row justify-center items-center gap-3 md:gap-4 mt-2 font-firacode">
+                      <div className="flex md:flex-row justify-center items-center gap-3 md:gap-4 mt-2 ">
                         <div
                           className="flex items-center justify-center -mt-2 dm:mt-0 text-[9px] md:text-[20px] bg-[#d9d9d9] text-[#121212] hover:bg-[#121212] hover:text-[#d9d9d9] rounded-lg p-2 md:p-3 w-3/6 md:w-2/6 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105 md:hover:scale-110"
                           id={id}
