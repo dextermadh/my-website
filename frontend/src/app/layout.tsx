@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-// import { Fira_Code, Open_Sans } from "next/font/google";
+import { Fira_Code, Open_Sans } from "next/font/google";
 
 // ✅ No "export" here
-// const firaCode = Fira_Code({
-//   subsets: ["latin"],
-//   weight: ["400", "700"],
-//   display: "swap",
-//   variable: "--font-firacode",
-// });
+const firaCode = Fira_Code({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+  variable: "--font-firacode",
+});
 
-// const openSans = Open_Sans({
-//   subsets: ["latin"],
-//   weight: ["400", "700"],
-//   display: "swap",
-//   variable: "--font-opensans",
-// });
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+  variable: "--font-opensans",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,8 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    // <html lang="en" className={`${firaCode.variable} ${openSans.variable}`}>
-    <html lang="en">
+    <html lang="en" className={`${firaCode.variable} ${openSans.variable}`}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

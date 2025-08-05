@@ -2,11 +2,24 @@
 
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
-import Navbar from "./components/navbar/Navbar";
-import Hero from "./components/hero/Hero";
 import ScrollToTop from "./components/ScrollToTop";
 
-// Lazy imports – no SSR
+// Regular imports
+import Navbar from "./components/navbar/Navbar";
+import Hero from "./components/hero/Hero";
+
+// Memoized static components
+const MemoizedNavbar = React.memo(Navbar);
+const MemoizedHero = React.memo(Hero);
+
+// Small placeholder component
+function SectionPlaceholder({ title }: { title: string }) {
+  return (
+    <div className="text-center py-20 text-gray-400 font-firacode">{title}</div>
+  );
+}
+
+// Lazy imports – no SSR, memoized
 const About = dynamic(() => import("./components/about/About"), {
   ssr: false,
   loading: () => <SectionPlaceholder title="Loading About..." />,
@@ -24,12 +37,10 @@ const Footer = dynamic(() => import("./components/footer/Footer"), {
   loading: () => <SectionPlaceholder title="Loading Contact..." />,
 });
 
-// Small placeholder component
-function SectionPlaceholder({ title }: { title: string }) {
-  return (
-    <div className="text-center py-20 text-gray-400 font-firacode">{title}</div>
-  );
-}
+const MemoizedAbout = React.memo(About);
+const MemoizedProjects = React.memo(Projects);
+const MemoizedArticles = React.memo(Articles);
+const MemoizedFooter = React.memo(Footer);
 
 export default function Home() {
   const [showAbout, setShowAbout] = useState(false);
@@ -64,13 +75,13 @@ export default function Home() {
 
   return (
     <div className="overflow-hidden">
-      <Navbar />
-      <Hero />
+      <MemoizedNavbar />
+      <MemoizedHero />
 
-      <div id="about">{showAbout && <About />}</div>
-      <div id="projects">{showProjects && <Projects />}</div>
-      <div id="articles">{showArticles && <Articles />}</div>
-      <div id="contact">{showFooter && <Footer />}</div>
+      <div id="about">{showAbout && <MemoizedAbout />}</div>
+      <div id="projects">{showProjects && <MemoizedProjects />}</div>
+      <div id="articles">{showArticles && <MemoizedArticles />}</div>
+      <div id="contact">{showFooter && <MemoizedFooter />}</div>
 
       <ScrollToTop />
     </div>
