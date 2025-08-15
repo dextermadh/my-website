@@ -1,10 +1,17 @@
 import React from "react";
 import "../articles/articles.css";
 import { WavyBackground } from "@/components/ui/wavy-background";
+import { motion } from "framer-motion";
 
 function Articles() {
   return (
-    <div id="articles">
+    <motion.div
+      id="articles"
+      initial={{ opacity: 0, y: 50 }} // Start faded and below
+      whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
+      viewport={{ once: true, amount: 0.2 }} // Trigger once, when 20% is visible
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <hr className="mt-20" />
       <h1 className="font-firacode flex justify-end lg:mr-61 mr-16 mt-12 text-[20px] lg:text-[40px] font-bold">
         Articles
@@ -20,7 +27,7 @@ function Articles() {
           stay tuned to read my articles
         </p>
       </WavyBackground>
-    </div>
+    </motion.div>
   );
 }
 

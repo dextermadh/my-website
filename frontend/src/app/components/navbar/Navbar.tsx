@@ -3,6 +3,7 @@ import React from "react";
 import svgPaths from "../imports/svg-pmhvsbynx7";
 import Link from "next/link";
 import my_image1 from "../../../../public/assets/navbar/me.jpg";
+import { motion } from "framer-motion";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -35,13 +36,17 @@ const Navbar = () => {
           />
         </svg>
       </div>
+
       {/* Nav Links */}
-      <div
+      <motion.div
+        initial={{ opacity: 0 }} // start invisible
+        animate={{ opacity: 1 }} // fade in
+        transition={{ duration: 1 }} // smooth 1s fade
         className="z-[100000] fixed top-6 lg:top-10 left-1/2 transform -translate-x-1/2
-  flex justify-center gap-6 lg:gap-10 font-opensans
-  bg-[#121212] text-[#d9d9d9] text-[12px] lg:text-[15px]
-  border-2 rounded-2xl px-4 py-2 w-9/12 sm:w-4/5 lg:w-2/6
-  lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-105"
+          flex justify-center gap-6 lg:gap-10 font-opensans
+          bg-[#121212] text-[#d9d9d9] text-[12px] lg:text-[15px]
+          border-2 rounded-2xl px-4 py-2 w-9/12 sm:w-4/5 lg:w-2/6
+          lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-105"
       >
         {navLinks.map(({ href, label }) => (
           <Link key={href} href={href}>
@@ -50,7 +55,7 @@ const Navbar = () => {
             </span>
           </Link>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };

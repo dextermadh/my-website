@@ -1,8 +1,11 @@
+"use client";
+
 import React from "react";
 import svgPaths from "../imports/svg-pmhvsbynx7";
 import myimage2 from "../../../../public/assets/about_me/me2.jpg";
 import librariesImg from "../../../../public/assets/about_me/frameworks1.png";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const skills = [
   {
@@ -80,21 +83,30 @@ const renderEducationCard = (edu: Education, i: number) => (
       className={`flex flex-col lg:flex-row font-firacode gap-2 lg:gap-0 justify-evenly ${edu.style} rounded-xl lg:h-32 p-6 mt-5 w-[68vw]`}
     >
       <div className="flex flex-col gap-1">
-        <h1 className="font-bold text-[14px] lg:text-[16px]">{edu.title}</h1>
-        <p>{edu.institution}</p>
-        {edu.extra && <li>{edu.extra}</li>}
+        <h1 className="font-bold text-[12px] lg:text-[16px]">{edu.title}</h1>
+        <p className="text-[12px] lg:text-[16px]">{edu.institution}</p>
+        {edu.extra && (
+          <li className="text-[12px] lg:text-[16px]">{edu.extra}</li>
+        )}
       </div>
       {edu.gpa && (
-        <h1 className="font-bold text-[14px] lg:text-[16px]">{edu.gpa}</h1>
+        <h1 className="font-bold text-[12px] lg:text-[16px]">{edu.gpa}</h1>
       )}
-      <h1 className="font-bold text-[14px] lg:text-[16px]">{edu.duration}</h1>
+      <h1 className="font-bold text-[12px] lg:text-[16px]">{edu.duration}</h1>
     </div>
   </div>
 );
 
 function About() {
   return (
-    <div className="relative py-12" id="about">
+    <motion.div
+      className="relative py-12"
+      id="about"
+      initial={{ opacity: 0, y: 50 }} // Start faded and below
+      whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
+      viewport={{ once: true, amount: 0.2 }} // Trigger once, when 20% is visible
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       {/* Decorative SVG */}
       <div className="absolute top-36 -left-[8vw] opacity-50 -rotate-10 -z-100">
         <svg className="w-[80vw]" viewBox="0 0 550 513" fill="none">
@@ -133,7 +145,7 @@ function About() {
 
         {/* Right Section */}
         <div className="flex-2">
-          <p className="text-[10px] lg:text-lg ml-16 lg:ml-0 mr-16 mt-5 lg:mr-60 font-firacode text-[#FFFF]">
+          <p className="text-[12px] lg:text-lg ml-16 lg:ml-0 mr-16 mt-5 lg:mr-60 font-firacode text-[#FFFF]">
             Hello! I’m Madhuka Abhishek, a curious and detail-oriented NLP and
             AI enthusiast currently pursuing a degree in Software Engineering. I
             have hands-on experience in text classification and model
@@ -152,7 +164,12 @@ function About() {
       </div>
 
       {/* Education Section */}
-      <div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }} // Start faded and below
+        whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
+        viewport={{ once: true, amount: 0.2 }} // Trigger once, when 20% is visible
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <h1 className="flex justify-end font-firacode lg:text-[40px] font-bold mr-20 mt-0 lg:mr-61 lg:-mt-20">
           Education
         </h1>
@@ -160,8 +177,8 @@ function About() {
           {education.map(renderEducationCard)}
         </div>
         <hr className="bg-[#d9d9d9] opacity-75 mt-16" />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 

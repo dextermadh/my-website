@@ -2,6 +2,7 @@ import React from "react";
 import svgPaths from "../imports/svg-pmhvsbynx7";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const contactLinks = [
   {
@@ -44,17 +45,41 @@ function Footer() {
 
       <hr />
 
-      <h1 className="absolute top-25 lg:top-40 left-12 lg:left-50 font-firacode text-[35px] lg:text-[70px]">
+      <motion.div
+        className="absolute top-25 lg:top-40 left-12 lg:left-50 font-firacode text-[35px] lg:text-[70px]"
+        initial={{ opacity: 0, y: 50 }} // Start faded and below
+        whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
+        viewport={{ once: true, amount: 0.2 }} // Trigger once, when 20% is visible
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         Madhuka
-      </h1>
-      <p className="absolute top-37 lg:top-65 left-10 lg:left-38 font-firacode text-[15px] lg:text-[25px] text-[#d9d9d9]">
+      </motion.div>
+      <motion.div
+        className="absolute top-37 lg:top-65 left-10 lg:left-38 font-firacode text-[15px] lg:text-[25px] text-[#d9d9d9]"
+        initial={{ opacity: 0, y: 50 }} // Start faded and below
+        whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
+        viewport={{ once: true, amount: 0.2 }} // Trigger once, when 20% is visible
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         AI/ML Engineer
-      </p>
-      <h1 className="absolute top-35 lg:top-65 left-44 lg:left-95 font-firacode text-[35px] lg:text-[70px]">
+      </motion.div>
+      <motion.div
+        className="absolute top-35 lg:top-65 left-44 lg:left-95 font-firacode text-[35px] lg:text-[70px]"
+        initial={{ opacity: 0, y: 50 }} // Start faded and below
+        whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
+        viewport={{ once: true, amount: 0.2 }} // Trigger once, when 20% is visible
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         Abhishek
-      </h1>
+      </motion.div>
 
-      <div className="absolute top-55 lg:top-35 right-20 lg:right-50">
+      <motion.div
+        className="absolute top-55 lg:top-35 right-20 lg:right-50"
+        initial={{ opacity: 0, y: 50 }} // Start faded and below
+        whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
+        viewport={{ once: true, amount: 0.2 }} // Trigger once, when 20% is visible
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <h1 className="text-[#d9d9d9]">.../Contacts</h1>
         <div className="flex flex-col lg:flex-row gap-6 mt-5">
           {contactLinks.map((link, index) => {
@@ -85,7 +110,7 @@ function Footer() {
             );
           })}
         </div>
-      </div>
+      </motion.div>
 
       {/* Bottom copyright text pushed to bottom with mt-auto */}
       <div className="mt-auto text-sm mx-auto px-4 text-center w-full max-w-screen-lg">

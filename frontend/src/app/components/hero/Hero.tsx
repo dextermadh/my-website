@@ -4,6 +4,7 @@ import { FileUser, Github, Linkedin, MoveRight } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import dynamic from "next/dynamic";
+import { motion } from "framer-motion";
 import "./embla.css";
 
 // Lazy-load EmblaCarousel to reduce initial bundle size
@@ -19,8 +20,9 @@ const navButtons = [
   {
     label: "Resume",
     icon: <FileUser />,
-    href: "#resume",
-    external: false,
+    href: "/assets/CV_LBDMA.Wijesundara.pdf",
+    external: true,
+    download: true,
   },
   {
     label: "Linkedin",
@@ -35,23 +37,34 @@ type NavButtonProps = {
   icon: React.ReactNode;
   href: string;
   external: boolean;
+  download: boolean
 };
 
 const renderNavButton = (
-  { label, icon, href, external }: NavButtonProps,
+  { label, icon, href, external, download }: NavButtonProps,
   index: number
 ) => (
-  <Link key={index} href={href} target={external ? "_blank" : undefined}>
+  <a
+    key={index}
+    href={href}
+    target={external ? "_blank" : undefined}
+    rel={external ? "noopener noreferrer" : undefined}
+    download={download} // enables download if true
+  >
     <div className="cursor-pointer outline outline-2 outline-[#d9d9d9] w-28 h-10 md:w-32 md:h-12 flex justify-center items-center p-2 md:p-3 gap-2 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-110 text-sm md:text-base">
       {icon}
       <span>{label}</span>
     </div>
-  </Link>
+  </a>
 );
 
 function Hero() {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 50 }} // Start faded and slightly below
+      animate={{ opacity: 1, y: 0 }} // End fully visible and in place
+      transition={{ duration: 0.8, ease: "easeOut" }} // Smooth transition
+    >
       {/* Heading Section */}
       <div className="py-26 md:py-26">
         <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-20 ">
@@ -102,7 +115,7 @@ function Hero() {
         </span>
         <EmblaCarousel slides={[0, 1, 2, 3]} options={{ loop: true }} />
       </div>
-    </div>
+    </motion.div>
   );
 }
 
