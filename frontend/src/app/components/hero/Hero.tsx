@@ -16,6 +16,7 @@ const navButtons = [
     icon: <Github />,
     href: "https://github.com/dextermadh",
     external: true,
+    download: false,
   },
   {
     label: "Resume",
@@ -29,6 +30,7 @@ const navButtons = [
     icon: <Linkedin />,
     href: "https://www.linkedin.com/in/madhuka-abhishek-wijesundara/",
     external: true,
+    download: false,
   },
 ];
 
