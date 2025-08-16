@@ -130,7 +130,7 @@ function About() {
             alt="me2"
             placeholder="blur"
             loading="lazy"
-            className="rounded-xl sm:scale-125 sm:w-full sm:h-fit xl:w-full xl:h-fit xl:transition-transform xl:duration-300 xl:ease-in-out xl:hover:scale-110 xl:hover:-rotate-3 will-change-transform"
+            className="rounded-xl sm:scale-125 xl:scale-100 sm:w-full sm:h-fit xl:w-full xl:h-fit xl:transition-transform xl:duration-300 xl:ease-in-out xl:hover:scale-110 xl:hover:-rotate-3 will-change-transform"
           />
           <div className="py-50 sm:flex hidden xl:flex">
             <Image
@@ -145,7 +145,7 @@ function About() {
 
         {/* Right Section */}
         <div className="flex-2">
-          <p className="text-[12px] sm:text-[15px] xl: xl:text-xl ml-16 sm:ml-4 xl:ml-0  mr-16 mt-5 xl:mr-60 font-firacode text-[#FFFF]">
+          <p className="text-[12px] sm:text-[15px] xl:text-[18px] ml-16 sm:ml-4 xl:ml-0  mr-16 mt-5 xl:mr-60 font-firacode text-[#FFFF]">
             Hello! I’m Madhuka Abhishek, a curious and detail-oriented NLP and
             AI enthusiast currently pursuing a degree in Software Engineering. I
             have hands-on experience in text classification and model
