@@ -46,7 +46,7 @@ function Footer() {
       <hr />
 
       <motion.div
-        className="absolute top-25 lg:top-40 left-12 lg:left-50 font-firacode text-[35px] lg:text-[70px]"
+        className="absolute top-25 xl:top-40 left-12 sm:left-24 xl:left-50  font-firacode text-[35px] xl:text-[70px]"
         initial={{ opacity: 0, y: 50 }} // Start faded and below
         whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
         viewport={{ once: true, amount: 0.2 }} // Trigger once, when 20% is visible
@@ -55,7 +55,7 @@ function Footer() {
         Madhuka
       </motion.div>
       <motion.div
-        className="absolute top-37 lg:top-65 left-10 lg:left-38 font-firacode text-[15px] lg:text-[25px] text-[#d9d9d9]"
+        className="absolute top-37 xl:top-65 left-10 sm:left-18 xl:left-38 font-firacode text-[15px] xl:text-[25px] text-[#d9d9d9]"
         initial={{ opacity: 0, y: 50 }} // Start faded and below
         whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
         viewport={{ once: true, amount: 0.2 }} // Trigger once, when 20% is visible
@@ -64,7 +64,7 @@ function Footer() {
         AI/ML Engineer
       </motion.div>
       <motion.div
-        className="absolute top-35 lg:top-65 left-44 lg:left-95 font-firacode text-[35px] lg:text-[70px]"
+        className="absolute top-35 sm:top-40 xl:top-65 left-44 sm:left-50 xl:left-95 font-firacode text-[35px] xl:text-[70px]"
         initial={{ opacity: 0, y: 50 }} // Start faded and below
         whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
         viewport={{ once: true, amount: 0.2 }} // Trigger once, when 20% is visible
@@ -74,16 +74,16 @@ function Footer() {
       </motion.div>
 
       <motion.div
-        className="absolute top-55 lg:top-35 right-20 lg:right-50"
+        className="absolute top-55 x xl:top-60 right-20 sm:right-20 xl:right-50"
         initial={{ opacity: 0, y: 50 }} // Start faded and below
         whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
         viewport={{ once: true, amount: 0.2 }} // Trigger once, when 20% is visible
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <h1 className="text-[#d9d9d9]">.../Contacts</h1>
-        <div className="flex flex-col lg:flex-row gap-6 mt-5">
+        <div className="flex flex-col xl:flex-row gap-6 mt-5">
           {contactLinks.map((link, index) => {
-            const commonClasses = `flex justify-center gap-2 border-2 p-3 lg:p-4 rounded-lg hover:bg-[#d9d9d9] hover:text-[#121212] lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-110 lg:hover:${link.rotate}`;
+            const commonClasses = `flex justify-center gap-2 border-2 p-3 xl:p-4 rounded-xl hover:bg-[#d9d9d9] hover:text-[#121212] xl:transition-transform xl:duration-300 xl:ease-in-out xl:hover:scale-110 xl:hover:${link.rotate}`;
             const isEmail = link.href.startsWith("mailto:");
             return isEmail ? (
               <a
@@ -113,7 +113,7 @@ function Footer() {
       </motion.div>
 
       {/* Bottom copyright text pushed to bottom with mt-auto */}
-      <div className="mt-auto text-sm mx-auto px-4 text-center w-full max-w-screen-lg">
+      <div className="mt-auto text-sm mx-auto px-4 text-center w-full max-w-screen-xl">
         <p>Created by Madhuka Abhishek</p>
         <p className="text-[#d9d9d9]">2025 © All Rights Reserved</p>
       </div>

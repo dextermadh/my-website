@@ -15,7 +15,7 @@ const techList = (items: string[]) =>
   items.map((tech, index) => (
     <span
       key={index}
-      className={`border-2 border-[#3d3d3d] text-[9px] lg:text-[16px] p-2 lg:p-3 rounded-lg hover:bg-[#d9d9d9] hover:text-[#121212] lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-110 lg:hover:${
+      className={`border-2 border-[#3d3d3d] text-[9px] xl:text-[16px] p-2 xl:p-3 rounded-xl hover:bg-[#d9d9d9] hover:text-[#121212] xl:transition-transform xl:duration-300 xl:ease-in-out xl:hover:scale-110 xl:hover:${
         index % 2 === 0 ? "-rotate-1" : "rotate-1"
       }`}
     >
@@ -36,10 +36,10 @@ const ProjectSection = ({
     className="flex justify-center font-firacode mt-16 mb-5 gap-4 items-center"
     id={id}
   >
-    <h1 className="font-bold bg-[#fff] p-3 text-[14px] lg:text-lg text-[#121212]">
+    <h1 className="font-bold bg-[#fff] p-3 text-[14px] xl:text-xl text-[#121212]">
       {number}
     </h1>
-    <h1 className="font-bold text-[14px] lg:text-lg">{title}</h1>
+    <h1 className="font-bold text-[14px] xl:text-xl">{title}</h1>
   </div>
 );
 
@@ -63,22 +63,22 @@ function Projects() {
           title="Fashion Designer Chatbot"
         />
 
-        <div className="flex justify-center gap-2 lg:gap-4 mt-8">
+        <div className="flex justify-center gap-2 xl:gap-4 mt-8">
           {techList(["Python", "Scikit-Learn", "Pandas", "Numpy", "Groq"])}
         </div>
-        <div className="flex justify-center gap-2 lg:gap-4 mt-4">
+        <div className="flex justify-center gap-2 xl:gap-4 mt-4">
           {techList(["Transformers", "Streamlit", "LinearSVC", "JSON"])}
         </div>
       </motion.div>
 
       <motion.div
-        className="flex flex-col lg:flex-row lg:justify-between justify-center lg:mr-52 lg:ml-52 lg:mt-10 mt-4"
+        className="flex flex-col xl:flex-row xl:justify-between justify-center xl:mr-52 xl:ml-52 xl:mt-10 mt-4"
         initial={{ opacity: 0, y: 50 }} // Start faded and below
         whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
         viewport={{ once: true, amount: 0.2 }} // Trigger once, when 20% is visible
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <div className="flex lg:flex-1/2  flex-col gap-2 font-firacode mr-12 ml-12 lg:ml-12 lg:mr-16 mt-5 text-[11px] lg:text-[16px]">
+        <div className="flex xl:flex-1/2  flex-col gap-2 font-firacode mr-12 ml-12 sm:ml-24 sm:mr-24 xl:ml-12 xl:mr-16 mt-5 text-[11px] xl:text-[16px]">
           <p className="font-firacode text-[#d9d9d9]">
             An interactive AI-powered chatbot designed for fashion designers to
             assist clients with inquiries related to collections, appointments,
@@ -98,12 +98,12 @@ function Projects() {
             </p>
           ))}
         </div>
-        <div className="lg:flex-1/2 flex justify-center mt-5 lg:mt-0">
+        <div className="xl:flex-1/2 flex justify-center mt-5 xl:mt-0">
           <Image
             src={chatImage}
             alt="chat image"
             loading="lazy"
-            className="border-2 border-[#3d3d3d] w-[80vw] rounded-xl lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-140 lg:hover:rotate-1"
+            className="border-2 border-[#3d3d3d] w-[80vw] sm:w-[] rounded-xl xl:transition-transform xl:duration-300 xl:ease-in-out xl:hover:scale-140 xl:hover:rotate-1"
           />
         </div>
       </motion.div>
@@ -120,25 +120,25 @@ function Projects() {
           number="02"
           title="Log Classification System"
         />
-        <div className="flex justify-center gap-2 lg:gap-4 mt-8">
+        <div className="flex justify-center gap-2 xl:gap-4 mt-8">
           {techList(["Python", "Scikit-Learn", "Pandas", "Numpy", "Groq"])}
         </div>
-        <div className="flex justify-center gap-2 lg:gap-4 mt-4">
+        <div className="flex justify-center gap-2 xl:gap-4 mt-4">
           {techList(["BERT", "Transformers", "Uvicorn", "Regex"])}
         </div>
-        <div className="flex justify-center gap-2 lg:gap-4 mt-4">
+        <div className="flex justify-center gap-2 xl:gap-4 mt-4">
           {techList(["CSV", "MultinomialNB"])}
         </div>
       </motion.div>
 
       <motion.div
-        className="flex flex-col lg:flex-row lg:justify-between justify-center lg:mr-52 lg:ml-52 lg:mt-10 mt-8"
+        className="flex flex-col xl:flex-row xl:justify-between justify-center xl:mr-52 xl:ml-52 xl:mt-10 mt-8"
         initial={{ opacity: 0, y: 50 }} // Start faded and below
         whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
         viewport={{ once: true, amount: 0.2 }} // Trigger once, when 20% is visible
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <div className="lg:flex-1/2 flex flex-col gap-2  font-firacode mr-16 ml-16 lg:ml-12 lg:mr-16 mt-5 text-[11px] lg:text-[16px]">
+        <div className="xl:flex-1/2 flex flex-col gap-2  font-firacode mr-16 ml-16 sm:ml-24 sm:mr-24  xl:ml-12 xl:mr-16 mt-5 text-[11px] xl:text-[16px]">
           <p className="font-firacode text-[#d9d9d9]">
             A smart log classification system that combines three different
             techniques to maximize accuracy and efficiency:
@@ -167,12 +167,12 @@ function Projects() {
             designed for real-time log analysis and classification.
           </p>
         </div>
-        <div className="lg:flex-1/2 flex justify-center mt-5 lg:mt-0">
+        <div className="xl:flex-1/2 flex justify-center mt-5 xl:mt-0">
           <Image
             src={project2Img1}
             alt="chat image"
             loading="lazy"
-            className="border-2 border-[#3d3d3d] w-[80vw] rounded-xl lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-160 lg:hover:rotate-1"
+            className="border-2 border-[#3d3d3d] w-[80vw] rounded-xl xl:transition-transform xl:duration-300 xl:ease-in-out xl:hover:scale-160 xl:hover:rotate-1"
           />
         </div>
       </motion.div>
@@ -189,15 +189,15 @@ function Projects() {
           number="03"
           title="Fashion Designer Website"
         />
-        <div className="flex justify-center gap-2 lg:gap-4 mt-8">
+        <div className="flex justify-center gap-2 xl:gap-4 mt-8">
           {techList(["Typescript", "React", "Tailwind", "Framer"])}
         </div>
-        <div className="flex justify-center gap-2 lg:gap-4 mt-4">
+        <div className="flex justify-center gap-2 xl:gap-4 mt-4">
           {techList(["Vercel", "NextJS", "Aceternity UI"])}
         </div>
       </motion.div>
       <motion.div
-        className="flex justify-center lg:mr-52 lg:ml-52 mt-10"
+        className="flex justify-center xl:mr-52 xl:ml-52 mt-10"
         initial={{ opacity: 0, y: 50 }} // Start faded and below
         whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
         viewport={{ once: true, amount: 0.2 }} // Trigger once, when 20% is visible
@@ -205,18 +205,18 @@ function Projects() {
       >
         <iframe
           src="https://ashirafernando.vercel.app/"
-          className="iframe rounded-xl lg:w-[1280px] h-[600px] lg:h-[650px]"
+          className="iframe rounded-xl sm:w-[600px] xl:w-[1280px] h-[600px] xl:h-[650px]"
           loading="lazy"
         />
       </motion.div>
       <motion.div
-        className="lg:mr-52 lg:ml-52 mr-16 ml-16 mt-10"
+        className="xl:mr-52 xl:ml-52 mr-16 ml-16 mt-10"
         initial={{ opacity: 0, y: 50 }} // Start faded and below
         whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
         viewport={{ once: true, amount: 0.2 }} // Trigger once, when 20% is visible
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <span className="font-firacode text-[11px] lg:text-[16px]">
+        <span className="font-firacode text-[11px] xl:text-[16px]">
           <b>Website Link: </b>
           <a
             href="https://ashirafernando.vercel.app"
@@ -239,22 +239,22 @@ function Projects() {
           number="04"
           title="Other Projects (Visit my Github)"
         />
-        <div className="flex justify-center gap-2 lg:gap-4 mt-8">
+        <div className="flex justify-center gap-2 xl:gap-4 mt-8">
           {techList(["CNNs", "ANNs", "Tensorflow", "Pytorch"])}
         </div>
-        <div className="flex justify-center gap-2 lg:gap-4 mt-4">
+        <div className="flex justify-center gap-2 xl:gap-4 mt-4">
           {techList(["Docker", "GCP", "OpenCV"])}
         </div>
       </motion.div>
       <motion.div
-        className="lg:w-[20vw] w-[40vw] mx-auto"
+        className="xl:w-[20vw] w-[40vw] mx-auto"
         initial={{ opacity: 0, y: 50 }} // Start faded and below
         whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
         viewport={{ once: true, amount: 0.2 }} // Trigger once, when 20% is visible
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <Link href="https://github.com/dextermadh" target="_blank">
-          <span className="flex justify-center text-[11px] lg:text-[18px] mt-8 border-2 border-[#3d3d3d] p-3 lg:p-4 gap-2 rounded-2xl hover:bg-[#d9d9d9] hover:text-[#121212] lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-110 lg:hover:rotate-1">
+          <span className="flex justify-center text-[11px] xl:text-[18px] mt-8 border-2 border-[#3d3d3d] p-3 xl:p-4 gap-2 rounded-2xl hover:bg-[#d9d9d9] hover:text-[#121212] xl:transition-transform xl:duration-300 xl:ease-in-out xl:hover:scale-110 xl:hover:rotate-1">
             <Github />
             <p>dextermadh</p>
           </span>

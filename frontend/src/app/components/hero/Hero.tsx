@@ -53,7 +53,7 @@ const renderNavButton = (
     rel={external ? "noopener noreferrer" : undefined}
     download={download} // enables download if true
   >
-    <div className="cursor-pointer outline outline-2 outline-[#d9d9d9] w-28 h-10 md:w-32 md:h-12 flex justify-center items-center p-2 md:p-3 gap-2 rounded-md hover:bg-[#d9d9d9] hover:text-[#121212] lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-110 text-sm md:text-base">
+    <div className="cursor-pointer outline outline-2 outline-[#d9d9d9] w-28 h-10 sm:w-42 sm:h-12 xl:w-32 xl:h-12 flex justify-center items-center p-2 xl:p-3 gap-2 rounded-xl hover:bg-[#d9d9d9] hover:text-[#121212] xl:transition-transform xl:duration-300 xl:ease-in-out xl:hover:scale-110  text-sm xl:text-base">
       {icon}
       <span>{label}</span>
     </div>
@@ -68,28 +68,28 @@ function Hero() {
       transition={{ duration: 0.8, ease: "easeOut" }} // Smooth transition
     >
       {/* Heading Section */}
-      <div className="py-26 md:py-26">
-        <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-20 ">
-          <span className="font-firacode text-[50px] md:text-[120px] font-bold">
+      <div className="py-26 xl:py-26">
+        <div className="flex flex-col sm:flex-col  xl:flex-row justify-center items-center gap-2 xl:gap-20 ">
+          <span className="font-firacode text-[50px] sm:text-[80px] xl:text-[120px] font-bold">
             AI / ML
           </span>
           <Link href="#about">
-            <div className="flex gap-3 md:gap-5 py-10 md:py-20 cursor-pointer items-center -mt-8 md:mt-0">
-              <span className="text-center bg-[#d9d9d9] font-firacode text-[#121212] text-[14px] md:text-[28px] p-2 md:p-3 rounded-lg w-[100px] md:w-[450px] h-[35px] md:h-[70px] flex items-center justify-center">
+            <div className="flex gap-3 xl:gap-5 py-10 xl:py-20 cursor-pointer items-center -mt-8 xl:mt-0">
+              <span className="text-center bg-[#d9d9d9] font-firacode text-[#121212] text-[14px] sm:text-[24px] xl:text-[28px] p-2 sm:p-5 xl:p-3 rounded-xl w-[100px] sm:w-[200px] xl:w-[450px] h-[35px] sm:h-[55px] xl:h-[70px] flex items-center justify-center">
                 About Me
               </span>
-              <MoveRight className="bg-[#d9d9d9] text-[#121212] p-2 md:p-3 rounded-lg w-[50px] md:w-[70px] h-[35px] md:h-[70px] lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:rotate-90" />
+              <MoveRight className="bg-[#d9d9d9] text-[#121212] p-2 xl:p-3 rounded-xl w-[50px] sm:w-[60px] xl:w-[70px] h-[35px] sm:h-[55px]  xl:h-[70px] xl:transition-transform xl:duration-300 xl:ease-in-out xl:hover:rotate-90" />
             </div>
           </Link>
-          <span className="font-firacode text-[50px] md:hidden font-bold -mt-8 md:mt-0">
+          <span className="font-firacode text-[50px] sm:text-[80px] xl:hidden font-bold -mt-8 xl:mt-0">
             Engineer
           </span>
         </div>
 
         {/* Subtext Section */}
-        <div className="flex flex-col md:flex-row justify-center items-center md:gap-20 gap-6 mt-6 md:mt-0">
-          <div className="ml-4 md:ml-20 -mt-2 md:-mt-10 text-center md:text-left">
-            <span className="text-[#d9d9d9] font-firacode text-[12px] md:text-[20px] whitespace-pre-wrap">
+        <div className="flex flex-col xl:flex-row justify-center items-center xl:gap-20 gap-6 mt-6 xl:mt-0">
+          <div className="ml-4 xl:ml-20 -mt-2 xl:-mt-10 text-center xl:text-left">
+            <span className="text-[#d9d9d9] font-firacode text-[12px] sm:text-[18px] xl:text-[20px] whitespace-pre-wrap">
               Software Engineering Undergraduate
               <br />
               passionate about working on
@@ -97,8 +97,8 @@ function Hero() {
               real-world projects.
             </span>
           </div>
-          <div className="-mt-6 md:-mt-16">
-            <span className="font-firacode text-[60px] lg:text-[120px] font-bold hidden md:flex">
+          <div className="-mt-6 xl:-mt-16">
+            <span className="font-firacode text-[60px] xl:text-[120px] font-bold hidden xl:flex">
               Engineer
             </span>
           </div>
@@ -106,13 +106,13 @@ function Hero() {
       </div>
 
       {/* Navigation Buttons */}
-      <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-7 font-firacode -mt-16 md:-mt-16">
+      <div className="flex flex-col xl:flex-row justify-center items-center gap-4 xl:gap-7 font-firacode -mt-16 xl:-mt-16">
         {navButtons.map(renderNavButton)}
       </div>
 
       {/* Carousel */}
-      <div className="flex flex-col items-center mt-10 gap-4 md:gap-8">
-        <span className="font-firacode text-[#d9d9d9] text-[12px] md:text-base">
+      <div className="flex flex-col items-center mt-10 gap-4 xl:gap-8">
+        <span className="font-firacode text-[#d9d9d9] text-[12px] sm:text-[15px] xl:text-base">
           .../Featured Projects
         </span>
         <EmblaCarousel slides={[0, 1, 2, 3]} options={{ loop: true }} />
