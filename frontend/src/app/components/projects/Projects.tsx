@@ -7,7 +7,7 @@ import project3Img2 from "../../../../public/assets/projects/project3img2.png";
 import project3Img3 from "../../../../public/assets/projects/project3img3.png";
 import project3Img4 from "../../../../public/assets/projects/project3img4.png";
 import "../projects/projects.css";
-import { Github } from "lucide-react";
+import { Code, Github } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -97,6 +97,13 @@ function Projects() {
               {feature}
             </p>
           ))}
+          <a
+            href="https://github.com/dextermadh/Hybrid-Fashion-Designer-Chatbot"
+            className="mt-2 xl:mt-4 border-2 border-[#d9d9d9] w-1/6 sm:w-1/10 xl:w-1/6 flex justify-center p-1 rounded-lg hover:bg-[#d9d9d9] hover:text-[#121212]"
+            target="blank"
+          >
+            <Code />
+          </a>
         </div>
         <div className="xl:flex-1/2 flex justify-center mt-5 xl:mt-0">
           <Image
@@ -166,6 +173,13 @@ function Projects() {
             Built using FastAPI and served with Uvicorn, this project is
             designed for real-time log analysis and classification.
           </p>
+          <a
+            href="https://github.com/dextermadh/Hybrid-Log-Classification-"
+            className="mt-2 xl:mt-4 border-2 border-[#d9d9d9] w-1/6 sm:w-1/10 xl:w-1/6 flex justify-center p-1 rounded-lg hover:bg-[#d9d9d9] hover:text-[#121212]"
+            target="blank"
+          >
+            <Code />
+          </a>
         </div>
         <div className="xl:flex-1/2 flex justify-center mt-5 xl:mt-0">
           <Image
@@ -224,6 +238,13 @@ function Projects() {
           >
             https://ashirafernando.vercel.app/
           </a>
+          <a
+            href="https://github.com/dextermadh/fashion-designer-portfolio-project"
+            className="mt-2 xl:mt-4 border-2 border-[#d9d9d9] w-1/6 sm:w-1/10 xl:w-1/12 flex justify-center p-1 rounded-lg hover:bg-[#d9d9d9] hover:text-[#121212]"
+            target="blank"
+          >
+            <Code className="scale-90" />
+          </a>
         </span>
       </motion.div>
 
@@ -254,7 +275,7 @@ function Projects() {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <Link href="https://github.com/dextermadh" target="_blank">
-          <span className="flex justify-center text-[11px] xl:text-[18px] mt-8 border-2 border-[#3d3d3d] p-3 xl:p-4 gap-2 rounded-2xl hover:bg-[#d9d9d9] hover:text-[#121212] xl:transition-transform xl:duration-300 xl:ease-in-out xl:hover:scale-110 xl:hover:rotate-1">
+          <span className="flex justify-center text-[11px] xl:text-[18px]  mt-8 border-2 border-[#3d3d3d] p-3 xl:p-4 gap-2 rounded-2xl hover:bg-[#d9d9d9] hover:text-[#121212] xl:transition-transform xl:duration-300 xl:ease-in-out xl:hover:scale-110 xl:hover:rotate-1">
             <Github />
             <p>dextermadh</p>
           </span>
